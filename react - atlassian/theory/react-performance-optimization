@@ -1,0 +1,7 @@
+- Minimum use effect (useCallback, useMemo)
+- Lazy load component
+    - const AboutComponent = React.lazy(() => import('./AboutComponent '));
+    - <Suspense fallback = { <div> Please Wait... </div> } > <AboutComponent /> </Suspense>
+- React.memo
+- Chrome dev tools -> application profilling and re-rendering
+- 

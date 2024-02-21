@@ -1,0 +1,24 @@
+.wrapper {
+    background-color: lightgray;
+    display: flex;
+    height: auto !important;
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+    height: 100px;
+
+    align-items: center; /* vertical alignment */
+    justify-content: center; /* horizontal alignment */
+}
+
+.wrapper > div {
+    width: 9.8vw; /* 98 / 10 items */
+    height: 10vh;
+
+    border: 0.1vw solid gold; /* (0.1 left + 0.1 right) * 10 items = 2 */
+    background-color: lightcoral;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}

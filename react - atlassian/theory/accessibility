@@ -1,0 +1,16 @@
+What is digital accessibility, and why does it matter?
+- People with disability
+- Users better accessbility (use website fully with either mouse or keyboard)
+- People who has issues in their eyes (zoom should be break quality and resposbility of application)
+- browser read the html which has accessbility given and it will generate accessbility tree for smooth experience.
+-  Screen reader uses the tree
+- Examples
+    - aria-describedby
+    - tab-index="0" => keyboard navigation (consider when we press tab)
+        - [give other than -1 to skip from keyboard navigation]
+        - 2 - 2nd tabs iteration
+        - 3 - 3rd tabs iteration
+    - Don't add role= "presentation" or aria-hidden= "true" to elements that need to have focus
+    - alt or label for image or label-for
+    - Symentic tags automatically managed accessiblity based on html5 tags
+    - section with aria-label

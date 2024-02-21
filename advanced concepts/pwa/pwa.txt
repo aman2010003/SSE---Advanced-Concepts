@@ -1,0 +1,28 @@
+What is a Progressive Web App and why it is game-changer in ECommerce
+
+- Application can be accessed from installable mobile app (works on mobile only)
+- PWA - full responsive (UI/UX made as a mobile app)
+- Memory
+  - Mobile App - 20 MB
+  - PWA - 5 MB
+- Usage
+  - Web app code can be ran on Windows/IOS/Android etc all
+  - No need to publish apps to different app stores
+  - PWAs can be build with common web technologies
+  - Cheaper to build
+  - Same code base for all platforms
+  - PWAs responsive web apps (mobile + ipad/tab + laptop)
+  - Smooth, Fast and Lightweight
+  - They work offline, unlike your regular site
+  - firebase.google.com - installation option in all platforms
+
+
+How does PWA works
+-  Javascript workers
+  - Serviceworker.js
+- Request PWA -> Javascript workers -> check in cache if yes load else load from server and do cache -> server
+- Service worker.js
+  - push notification
+  - offline data rendering
+  - background sync
+- PWA made up of html, css and js

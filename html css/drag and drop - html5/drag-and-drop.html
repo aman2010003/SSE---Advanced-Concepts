@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./drag-and-drop.css">
+    <script>
+        function drag(e) {
+            e.dataTransfer.setData('text', e.target.id);
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            var data = e.dataTransfer.getData("text");
+            e.target.appendChild(document.getElementById(data));
+        }
+
+        function allowDrop(e) {
+            if (e.target.tagName !== 'IMG')
+                e.preventDefault();
+        }
+    </script>
+</head>
+<body>
+
+    <div class="wrapper" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="item1">
+            Open
+            <img id="draggable" class="image" src="./jira_issue.png" draggable="true" ondragstart="drag(event)">
+            <img id="draggable" class="image" src="./jira_issue.png" draggable="true" ondragstart="drag(event)">
+            <img id="draggable" class="image" src="./jira_issue.png" draggable="true" ondragstart="drag(event)">
+            <img id="draggable" class="image" src="./jira_issue.png" draggable="true" ondragstart="drag(event)">
+            <img id="draggable" class="image" src="./jira_issue.png" draggable="true" ondragstart="drag(event)">
+            <img id="draggable" class="image" src="./jira_issue.png" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="item2" >In Progress</div>
+        <div class="item3">Code Review</div>
+        <div class="item4">QA In Progress</div>
+        <div class="item5">QA Verified</div>
+        <div class="item6">Closed</div>
+    </div>
+
+</body>

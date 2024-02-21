@@ -1,0 +1,44 @@
+- Loader where ever required
+- Imp - withLoading(DataComponent)
+import React from 'react';
+
+// This is your Higher Order Component which provides the loader functionality
+function withLoading(Component) {
+  return function EnhancedComponent({ isLoading, ...props }) {
+    if (!isLoading) {
+      return <div>Loading...</div>;
+    }
+    return <Component {...props} />;
+  }
+}
+
+// Here is an example of how you'd use it
+class DataComponent extends React.Component {
+  //...
+}
+
+export default withLoading(DataComponent);
+
+HOC stands for Higher-Order Component in React. It's a pattern derived from React's compositional nature. 
+
+A higher-order component is a function that takes a component and returns a new component. HOCs are used to reuse component logic. 
+
+HOCs can be used to abstract or alter props or state or change component behavior. You might use a HOC to introduce props to a component or access lifecycle hooks. 
+
+For instance, if you want to add data-fetching to a component, instead of repeating code to fetch data in several component, you can wrap them in a HOC that manages data fetching and error handling.
+
+Here's a simple example of a HOC:
+
+```javascript
+function withExtraPropAdded(component) {
+  const Component = component;
+  return function(props) {
+    return <Component extraProp="someValue" {...props} />;
+  }
+}
+
+const EnhancedComponent = withExtraPropAdded(MyComponent);
+```
+In the example, `withExtraPropAdded` is a HOC. It returns a new component that renders `MyComponent`, but with an extra property. 
+
+The naming convention for HOCs is pretty standard — they start with 'with', followed by a description of their added functionality. Hence, in this case, the name 'withExtraPropAdded'.

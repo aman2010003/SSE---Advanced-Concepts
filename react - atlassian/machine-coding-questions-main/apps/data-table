@@ -1,0 +1,3 @@
+Create a scalable component that handles a table kind of structure (columns, max row 10 per page) that adjusts with different columns and it also handles data and it also manages pagination. That component must work on any list data whether it is a users list location list or events list data etc. (Implementation approach with pseudo-code)
+
+https://stackblitz.com/edit/react-starter-typescript-xdkhmc

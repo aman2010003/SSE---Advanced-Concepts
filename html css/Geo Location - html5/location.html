@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./location.css">
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const { latitude, longitude } = position.coords;
+                        document.querySelector('#longi').innerHTML = `Longitude is: ${longitude}`;
+                        document.querySelector('#lati').innerHTML =`Latitude is: ${latitude}`;
+                    },
+                    (error) => {
+                        document.querySelector('#error').innerHTML = error.message;
+                    }
+                );
+            } else {
+                document.querySelector('#error').innerHTML = 'Geo Location is not supported by browser';
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>HTML 5 - Geo Location</h1>
+
+    <button onclick="getLocation()">Fetch Location...</button>
+
+    <div id="map"></div>
+    <div id="longi"></div>
+    <div id="lati"></div>
+    <span id="error"></span>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100vh, auto);
+}
+
+.wrapper > div {
+    border: 2px solid rgb(233 171 88);
+    border-radius: 5px;
+    background-color: rgb(233 171 88 / 50%);
+    padding: 1em;
+    color: #d9480f;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.image {
+    width: 14vw;
+    height: 20vh;
+    margin-top: 1vh;
+}
+
+.image:first-child {
+    margin-top: 5vh;
+}

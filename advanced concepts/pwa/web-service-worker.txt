@@ -1,0 +1,17 @@
+Web Workers and Service Workers are both types of JavaScript Workers, but they serve different purposes and have different capabilities:
+
+Web Worker:
+Web Workers are used for performing heavy computations or executing large scripts without blocking the main thread.
+They run in the background and can't access or manipulate the DOM directly.
+This means they can't update the user interface. However, they can send messages back to the main script (which can update the UI),
+using the postMessage method. They are designed to allow long-running scripts to execute without slowing down the user's browser.
+
+Service Worker:
+Service Workers act as programmable network proxies, allowing control over how network requests from your page are handled.
+They are designed to enable the creation of effective offline experiences and intercept network requests and cache or retrieve resources
+from the cache.
+They can also handle push notifications and background sync processes. Unlike Web Workers, Service Workers can be terminated when not in
+use and restarted when needed again, making them more efficient. 
+
+In summary, while both run in the background and don't block the main thread, Web Workers are mainly used for offloading heavy computation
+to a background thread, and Service Workers are primarily used for caching resources for offline usage and acting as a network proxy.

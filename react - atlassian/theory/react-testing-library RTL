@@ -1,0 +1,41 @@
+/* https://testing-library.com/docs/react-testing-library/intro
+
+Code 1
+
+import {render, screen} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import '@testing-library/jest-dom'
+import Fetch from './fetch'
+
+test('loads and displays greeting', async () => {
+  // ARRANGE
+  render(<Fetch url="/greeting" />)
+
+  // ACT
+  await userEvent.click(screen.getByText('Load Greeting'))
+  await screen.findByRole('heading')
+
+  // ASSERT
+  expect(screen.getByRole('heading')).toHaveTextContent('hello there')
+  expect(screen.getByRole('button')).toBeDisabled()
+})
+
+code 2 - dummy server
+
+const server = setupServer(
+  rest.get('/greeting', (req, res, ctx) => {
+    return res(ctx.json({greeting: 'hello there'}))
+  }),
+)
+
+beforeAll(() => server.listen())
+afterEach(() => server.resetHandlers())
+afterAll(() => server.close())
+
+Library
+import {render} from '@testing-library/react'
+import '@testing-library/jest-dom'
+
+User Events
+- best library user-events
+*/

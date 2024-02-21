@@ -1,0 +1,73 @@
+PWA course by Angular University
+- Background loading
+- Offline support
+- etc
+
+1) sw-register.js (include into html)
+
+if ('serviceWorker' in navigator) {
+  // new service worker instance
+  navigator.serviceWorker.register('/sw.js', {
+    scope: '/' // all http requests should be intercepted (html, js, css, http)
+  })
+    .then((registration) => {
+      console.log('registration is done successfully', registration);
+    })
+}
+
+2) Service worker life cycle - sw.js
+- Makes sure i.e. Insuring consistency by default
+
+const VERSION = 'v1';
+
+function log(messages) {
+  console.log(VERSION, messages);
+}
+
+log('Installing service worked');
+
+- angular.json assets
+- Application -> service workers -> sw.js shows running
+- logging
+  - installing
+  - registration is successful
+- on reload service worker won't reload again, it still keeps activated
+- When browser deactivates service worker
+  - open app in multiple tabs of browser
+  - when we close all pages of particular app, it will stop working in some time (import for mobile)
+
+Life cycle phases
+- install
+  self.addEventListener('install', () => {
+    console.log('version is installed');
+  })
+- active
+  self.addEventListener('active', () => {
+    console.log('version is activated);
+  })
+
+- installing
+- sw registration completed
+- version installed
+- version activated
+
+change version to v2 and check => v1 is running and v2 is installed but not activated
+- User still running previour version of the application 
+- Consistent application version in multiple tabs
+
+How to activate v2?
+- it will load when user closes all tabs v1 is running
+- v1 will stopped and unregistered and v2 is activated and running
+
+cache loading can be also done
+
+
+
+self.addEventListener('install', (e) => e.waitUnit(installServiceWorker()));
+
+Angular Service Worker
+- ng new new-app --service-worker
+- angular.json -> serviceWorked: true
+- ngsw-config.json
+- ServiceWorkerModule.register('file-name', { enable: environment.production })
+- push notification using service worker
